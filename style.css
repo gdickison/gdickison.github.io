@@ -11,7 +11,7 @@
 }
 
 html {
-    background-color: rgb(66, 135, 245);
+    background-color: black;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     font-weight: 300;
@@ -28,12 +28,38 @@ body {
     font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   }
 
-.container {
-    height: 98vh ;
+.home-container {
+    height: 100vh ;
     display: grid;
     grid-template-columns: 1fr 6fr repeat(3, 1fr);
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 140px 10fr 140px;
     /* grid-gap: 20px; */
+}
+
+.work-container {
+    display: grid;
+    grid-template-columns: .75fr 1fr 1fr .75fr;
+    grid-template-rows: repeat(8, 400px);
+    grid-gap: 10px;
+}
+
+a {
+    display: grid;
+}
+
+.work-item {
+    transition: 0.3s;
+}
+
+.work-item:hover,
+.item-corner-title a:hover {
+    filter: invert(0.5) sepia(1) hue-rotate(200deg) grayscale(100%);
+}
+
+img {
+    place-self: center;
+    width: 240px;
+    height: 240px;
 }
 
 .item {
@@ -50,6 +76,17 @@ body {
     margin: 0, 0, 5px, 0;
 }
 
+.circle-badge-white {
+    justify-content: right;
+    max-width:100%;
+    max-height:100%;
+}
+
+.circle-badge-black {
+    justify-content: right;
+    align-content: flex-end;
+}
+
 #company {
     font-family: "HouseSlant";
     font-size: 10.5em;
@@ -59,17 +96,57 @@ body {
     line-height: 0.8em;
 }
 
+.item-corner-title {
+    font-family: "HouseSlant";
+    font-size: 2em;
+    background-color: white;
+    display: flex;
+    display: block;
+}
+
+.item-corner-title a {
+    color: black;
+    transition: 0.3s;
+}
+
+.corner-title-studio {
+    margin-left: 75px;
+    padding: 0;
+    margin-bottom: 0;
+    align-content: flex-end;
+}
+
+.corner-title-gam {
+    margin-left: 75px;
+    padding: 0;
+    margin-top: 0;
+    align-content: flex-start;
+}
+
 #blurb {
-    grid-column: 3 / span 3;
+    grid-column: span 3;
 }
 
 .left {
     background-color: black;
 }
 
+.menu {
+    align-content: flex-start;
+    padding-top: 40px;
+}
+
 #blurb,
 .menu {
     font-size: 18px;
+}
+
+.menu a {
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: black;
 }
 
 .menu,
@@ -82,7 +159,7 @@ body {
 #noun {
     font-size: 12px;
     justify-content: left;
-    grid-column: 3 / span 3;
+    grid-column: span 3;
     padding-bottom: 30px;
 }
 
